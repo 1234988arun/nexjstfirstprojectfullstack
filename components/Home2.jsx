@@ -63,12 +63,12 @@ const Home2 = () => {
     try {
       if (editId) {
         await axios.put(
-          `https://nexjstfirstprojectfullstack.onrender.com/api/students/${editId}`,
+          `/api/students/${editId}`,
           values
         )
       } else {
         await axios.post(
-          'https://nexjstfirstprojectfullstack.onrender.com/api/students',
+          '/api/students',
           values
         )
       }
@@ -96,7 +96,7 @@ const Home2 = () => {
   const deleteStudentdata = async (id) => {
     try {
       await axios.delete(
-        `https://nexjstfirstprojectfullstack.onrender.com/api/students/${id}`
+        `/api/students/${id}`
       )
 
       mutate()
@@ -106,7 +106,7 @@ const Home2 = () => {
   }
 
   const { data, error, isLoading, mutate } = useSWR(
-    'https://nexjstfirstprojectfullstack.onrender.com/api/students',
+    '/api/students',
     fetcher
   )
 
